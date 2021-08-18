@@ -9,12 +9,11 @@ sudo apt install python3-pip
 sudo apt-get install -y libffi-dev
 sudo apt-get install -y python-openssl
 sudo apt-get install libssl-dev
-sudo apt-get install curl
 
 # install Python PIP
 sudo apt-get update -y
 sudo apt-get install -y curl
-curl -sSL https://bootstrap.pypa.io/get-pip.py | sudo python
+curl -sSL https://bootstrap.pypa.io/pip/2.7/get-pip.py | sudo python
 
 # install Docker Compose build dependencies
 sudo apt-get install -y libffi-dev
