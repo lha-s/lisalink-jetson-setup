@@ -2,6 +2,7 @@
 
 # >>>>>>>>>>>> sudo setup.sh <<<<<<<<<<<
 # Installation tested for Jetson Jetpack 4.5.1
+# chmod +x setup.sh
 
 # dependencies
 sudo apt install python3-pip
