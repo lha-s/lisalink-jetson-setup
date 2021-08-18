@@ -37,34 +37,18 @@ chmod 777 install-opendatacam.sh
 # NB: Will run from demo file, you can change this after install, see "5. Customize OpenDataCam"
 ./install-opendatacam.sh --platform nano
 
-sudo docker-compose stop
+# shutdown for modifications
+sudo docker-compose down
 
 # Edit configuration file config.json to keep only "person"
-sed -i 's/.*"VIDEO_INPUT".*/  "VIDEO_INPUT": "usbcam",/' config.json
-
-sed -e '/bicycle/ s/^#*/#/g' -i config.json
-sed -e '/truck/ s/^#*/#/g' -i config.json
-sed -e '/motorbike/ s/^#*/#/g' -i config.json
-sed -e '/car/ s/^#*/#/g' -i config.json
-sed -e '/bus/ s/^#*/#/g' -i config.json
-sed -e 's/.*"class": "person".*/    { "class": "person", "hexcode": "1F6B6"}/'
-
-sed -i 's/.*VALID_CLASSES.*/  "VALID_CLASSES": ["person"],/' config.json
+cp config.json.template config.json
 
 # Downgrade mongodb version to 4.4.8
-sed -i 's/.*image: mongo.*/    image: mongo:4.4.8/' docker-compose.yml
+cp docker-compose.yml.template docker-compose.yml
+
+# final start
 sudo docker-compose up -d
-sudo docker-compose restart
 
-# Run fan (max speed 255)
-sudo sh -c 'echo 100 > /sys/devices/pwm-fan/target_pwm' 
-
-# Run fan on reboot automatically
-touch /etc/rc.local
-echo "#!/bin/bash" >> /etc/rc.local
-echo "sleep 10" >> /etc/rc.local
-echo "sudo /usr/bin/jetson_clocks" >> /etc/rc.local
-echo "sudo sh -c 'echo 100 > /sys/devices/pwm-fan/target_pwm'" >> /etc/rc.local
-
-sudo chmod u+x /etc/rc.local
-
+# start fan and config to start at every reboot
+chmod +x fan.sh
+sudo ./fan.sh
