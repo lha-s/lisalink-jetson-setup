@@ -41,7 +41,7 @@ chmod 777 install-opendatacam.sh
 sudo docker-compose stop
 
 # Edit configuration file config.json to keep only "person"
-sed -i 's/TO_REPLACE_VIDEO_INPUT/usbcam/' config.json
+sed -i 's/.*"VIDEO_INPUT".*/  "VIDEO_INPUT": "usbcam",/' config.json
 
 sed -e '/bicycle/ s/^#*/#/g' -i config.json
 sed -e '/truck/ s/^#*/#/g' -i config.json
