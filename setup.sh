@@ -47,7 +47,7 @@ sed -e '/truck/ s/^#*/#/g' -i config.json
 sed -e '/motorbike/ s/^#*/#/g' -i config.json
 sed -e '/car/ s/^#*/#/g' -i config.json
 sed -e '/bus/ s/^#*/#/g' -i config.json
-sed -e 's/.*"class": "person".*/    { "class": "person", "hexcode": "1F6B6"}'
+sed -e 's/.*"class": "person".*/    { "class": "person", "hexcode": "1F6B6"}/'
 
 sed -i 's/.*VALID_CLASSES.*/  "VALID_CLASSES": ["person"],/' config.json
 
