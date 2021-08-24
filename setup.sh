@@ -4,10 +4,14 @@
 # Installation tested for Jetson Jetpack 4.5.1
 # chmod +x setup.sh
 
+# set jetson on 10W (0 for 10W, 1 for 5W)
+sudo nvpmodel -m 0
+
+# pre-requisit for certificates by fixing the date
+sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
+
 # dependencies
 sudo apt install python3-pip
-sudo apt-get install -y libffi-dev
-sudo apt-get install -y python-openssl
 sudo apt-get install libssl-dev
 
 # install Python PIP
