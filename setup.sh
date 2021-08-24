@@ -3,6 +3,7 @@
 # >>>>>>>>>>>> sudo setup.sh <<<<<<<<<<<
 # Installation tested for Jetson Jetpack 4.5.1
 # chmod +x setup.sh
+# doc: https://opendatacam.github.io/opendatacam/documentation/jetson/JETSON_NANO.html#using-barrel-jack-5v---4a
 
 # set jetson on 10W (0 for 10W, 1 for 5W)
 sudo nvpmodel -m 0
