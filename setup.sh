@@ -10,6 +10,11 @@ sudo nvpmodel -m 0
 # pre-requisit for certificates by fixing the date
 sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
 
+#In order to reduce memory pressure (and crashes), it is a good idea to setup a 6GB swap partition. (Nano has only 4GB of RAM)
+git clone https://github.com/JetsonHacksNano/installSwapfile
+chmod 777 installSwapfile/installSwapfile.sh
+./installSwapfile/installSwapfile.sh
+
 # dependencies
 sudo apt install python3-pip
 sudo apt-get install libssl-dev
