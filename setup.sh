@@ -8,6 +8,10 @@
 # set jetson on 10W (0 for 10W, 1 for 5W)
 sudo nvpmodel -m 0
 
+# start fan and config to start at every reboot
+chmod +x fan.sh
+sudo ./fan.sh
+
 # pre-requisit for certificates by fixing the date
 sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
 
@@ -59,6 +63,3 @@ cp docker-compose.yml.template docker-compose.yml
 # final start
 sudo docker-compose up -d
 
-# start fan and config to start at every reboot
-chmod +x fan.sh
-sudo ./fan.sh
