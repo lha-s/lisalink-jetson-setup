@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo echo 'sudo docker-compose restart' >> /etc/rc.local
+
+sudo echo 'sudo pm2 start /home/lisalink/lisalink-setup/lisalink-bot/start.js --name bot-telegram' >> /etc/rc.local

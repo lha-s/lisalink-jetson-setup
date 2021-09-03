@@ -5,18 +5,13 @@ const token = "1837648452:AAGm0YWTX4T7Gz1Mg98k-uNcn49KzJG_cL0"
 const bot = new TelegramBot(token, {polling: true});
 const UserVar = process.env.HOME || "/home/notfound";
 const User = UserVar.substring(6);
+var i = 0;
+const chatId = 416698251;
 
 bot.on('message', (msg) => {
-	const chatId = msg.chat.id;
-
-	const text = msg.text;
-
-	console.log(text)
-
-	if (text.toLowerCase() == User || text.toLowerCase() == "all") {
-		bot.sendMessage(chatId, User + ' : ' + ip.address());
-		return ;
+	while (i == 0)
+	{
+		bot.sendMessage(chatId, User + ' : ' + ip.address() + " has started");
+		i++;
 	}
-	else
-		bot.sendMessage(chatId, 'Invalid jetson name!');
 });
