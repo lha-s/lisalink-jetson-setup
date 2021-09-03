@@ -12,6 +12,14 @@ sudo nvpmodel -m 0
 chmod +x fan.sh
 sudo ./fan.sh
 
+# config restart of opendatacam and telegram notification
+chmod +x reboot-config.sh
+sudo ./reboot-config.sh
+
+# install nodejs for telegram bot
+wget -qO- https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt install -y nodejs
+
 # pre-requisit for certificates by fixing the date
 sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
 
@@ -23,8 +31,8 @@ chmod 777 installSwapfile/installSwapfile.sh
 # dependencies
 sudo apt-get update -y
 sudo apt-get install -y curl
-sudo apt install python3-pip
-sudo apt-get install libssl-dev
+sudo apt install -y python3-pip
+sudo apt-get install -y libssl-dev
 
 # install Python PIP
 curl -sSL https://bootstrap.pypa.io/pip/2.7/get-pip.py | sudo python
