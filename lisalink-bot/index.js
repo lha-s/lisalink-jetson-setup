@@ -18,5 +18,5 @@ bot.on('message', (msg) => {
 		return ;
 	}
 	else
-		bot.sendMessage(chatId, 'Invalid command. Type help');
+		bot.sendMessage(chatId, 'Invalid jetson name!');
 });

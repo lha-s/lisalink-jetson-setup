@@ -16,6 +16,9 @@ sudo ./fan.sh
 chmod +x reboot-config.sh
 sudo ./reboot-config.sh
 
+# protect /etc/rc.local
+sudo chmod u+x /etc/rc.local
+
 # install nodejs for telegram bot
 wget -qO- https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
