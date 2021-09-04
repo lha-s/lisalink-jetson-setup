@@ -22,6 +22,8 @@ sudo chmod u+x /etc/rc.local
 # install nodejs for telegram bot
 wget -qO- https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
+sudo apt-get install npm
+sudo npm install pm2 -g
 
 # pre-requisit for certificates by fixing the date
 sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
