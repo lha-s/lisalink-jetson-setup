@@ -19,6 +19,10 @@ sudo ./reboot-config.sh
 # protect /etc/rc.local
 sudo chmod u+x /etc/rc.local
 
+# download and set cron
+sudo apt-get install cron
+sudo ./config-cron.sh
+
 # install nodejs for telegram bot
 wget -qO- https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
