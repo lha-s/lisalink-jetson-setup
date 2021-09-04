@@ -1,2 +1,1 @@
-#!/bin/bash
-* * * * * ./ip.sh
+* * * * * /home/USER/lisalink-setup/ip.sh
