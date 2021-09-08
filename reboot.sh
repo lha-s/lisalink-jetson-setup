@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # catch user logname
-sudo ./user.sh
+cp ./user.sh ~/
+runuser -l  lisalink -c '~/user.sh'
 
 user=$(<~/.logname)
 
