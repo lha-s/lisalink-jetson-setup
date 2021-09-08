@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo echo "sudo $PWD/lisalink-setup/docker-compose restart" >> /etc/rc.local
+sudo echo "sudo $HOME/lisalink-setup/docker-compose restart" >> /etc/rc.local
