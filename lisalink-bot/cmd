@@ -1,3 +1,0 @@
-sudo pm2 start index.js --name bot-telegram
-sudo pm2 restart bot-telegram
-sudo pm2 stop bot-telegram

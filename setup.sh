@@ -13,8 +13,8 @@ chmod +x fan.sh
 sudo ./fan.sh
 
 # config restart of opendatacam and telegram notification
-chmod +x reboot-config.sh
-sudo ./reboot-config.sh
+chmod +x reboot.sh
+sudo ./reboot.sh
 
 # protect /etc/rc.local
 sudo chmod u+x /etc/rc.local
